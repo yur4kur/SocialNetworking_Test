@@ -15,6 +15,8 @@
 		6A54A43E29BD86CB00AC0AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A54A43C29BD86CB00AC0AB8 /* LaunchScreen.storyboard */; };
 		6A54A45829C9982700AC0AB8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A45729C9982700AC0AB8 /* NetworkManager.swift */; };
 		6A54A45A29C9999100AC0AB8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A45929C9999100AC0AB8 /* User.swift */; };
+		6A54A45D29C9DBBD00AC0AB8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A45B29C9DBBD00AC0AB8 /* UserTableViewCell.swift */; };
+		6A54A45E29C9DBBD00AC0AB8 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A54A45C29C9DBBD00AC0AB8 /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		6A54A43F29BD86CB00AC0AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A54A45729C9982700AC0AB8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6A54A45929C9999100AC0AB8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6A54A45B29C9DBBD00AC0AB8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		6A54A45C29C9DBBD00AC0AB8 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			children = (
 				6A54A43C29BD86CB00AC0AB8 /* LaunchScreen.storyboard */,
 				6A54A43729BD86C600AC0AB8 /* Main.storyboard */,
+				6A54A45B29C9DBBD00AC0AB8 /* UserTableViewCell.swift */,
+				6A54A45C29C9DBBD00AC0AB8 /* UserTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A54A45E29C9DBBD00AC0AB8 /* UserTableViewCell.xib in Resources */,
 				6A54A43E29BD86CB00AC0AB8 /* LaunchScreen.storyboard in Resources */,
 				6A54A43B29BD86CB00AC0AB8 /* Assets.xcassets in Resources */,
 				6A54A43929BD86C600AC0AB8 /* Main.storyboard in Resources */,
@@ -188,6 +195,7 @@
 				6A54A43629BD86C600AC0AB8 /* ViewController.swift in Sources */,
 				6A54A43229BD86C600AC0AB8 /* AppDelegate.swift in Sources */,
 				6A54A45A29C9999100AC0AB8 /* User.swift in Sources */,
+				6A54A45D29C9DBBD00AC0AB8 /* UserTableViewCell.swift in Sources */,
 				6A54A43429BD86C600AC0AB8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
