@@ -10,5 +10,11 @@ import Foundation
 struct User: Codable {
     var id: Int
     var name: String
-    var username: String
+    //var username: String
+    var email: String
+    struct Company: Codable {
+        var name: String
+        //var bs: String
+    }
+    var company: Company
 }

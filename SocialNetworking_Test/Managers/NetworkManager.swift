@@ -38,7 +38,7 @@ class NetNetworkManager {
                         print("Error in decoding data: \(error.localizedDescription)")
                     }
                 }
-            }
+            }.resume()
         }
     }
     
