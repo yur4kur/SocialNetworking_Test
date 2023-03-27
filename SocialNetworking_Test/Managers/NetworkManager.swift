@@ -18,6 +18,7 @@ class NetworkManager {
     }
     
     func getAllUser(_ completionHandler: @escaping ([User]) -> Void) {
+        
         guard let url = URL(string: baseURL + APIs.users.rawValue) else { return }
             
            let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -43,6 +44,31 @@ class NetworkManager {
     
     func getPostsByUser (userId: Int, _ completionHandler: @escaping ([Post]) -> Void) {
         
+        guard let url = URL(string: baseURL + APIs.posts.rawValue) else { return }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        components?.queryItems = [URLQueryItem(name: "userId", value: "\(userId)")]
+        
+        guard let queryURL = components?.url else { return }
+        
+        let task = URLSession.shared.dataTask(with: queryURL) { data, response, error in
+            
+            if let error = error {
+                print("Error in request: \(error.localizedDescription)")
+            }
+            if let response = response as? HTTPURLResponse, response.statusCode == 200 {
+                guard let data = data else {
+                    return
+                }
+                do {
+                    let posts = try JSONDecoder().decode([Post].self, from: data)
+                    completionHandler(posts)
+                } catch {
+                    print("Error in decoding data: \(error.localizedDescription)")
+                }
+            }
+        }
+        task.resume()
     }
     
 }
