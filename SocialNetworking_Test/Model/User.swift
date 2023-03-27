@@ -14,7 +14,7 @@ struct User: Codable {
     var email: String
     struct Company: Codable {
         var name: String
-        //var bs: String
+        var catchPhrase: String
     }
     var company: Company
 }

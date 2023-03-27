@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetNetworkManager {
+class NetworkManager {
     
     private let baseURL = "https://jsonplaceholder.typicode.com/"
     
@@ -18,9 +18,9 @@ class NetNetworkManager {
     }
     
     func getAllUser(_ completionHandler: @escaping ([User]) -> Void) {
-        if let url = URL(string: baseURL + APIs.users.rawValue) {
+        guard let url = URL(string: baseURL + APIs.users.rawValue) else { return }
             
-            URLSession.shared.dataTask(with: url) { data, response, error in
+           let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 
                 if let error = error {
                     print("Error in request: \(error.localizedDescription)")
@@ -28,9 +28,7 @@ class NetNetworkManager {
                 
                 if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                     
-                    guard let data = data else {
-                        return
-                    }
+                    guard let data = data else { return }
                     do {
                         let users = try JSONDecoder().decode([User].self, from: data)
                         completionHandler(users)
@@ -38,8 +36,13 @@ class NetNetworkManager {
                         print("Error in decoding data: \(error.localizedDescription)")
                     }
                 }
-            }.resume()
+            }
+            task.resume()
         }
+    
+    
+    func getPostsByUser (userId: Int, _ completionHandler: @escaping ([Post]) -> Void) {
+        
     }
     
 }

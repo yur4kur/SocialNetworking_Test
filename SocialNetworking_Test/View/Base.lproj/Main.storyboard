@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Users-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SocialNetworking_Test" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,14 +32,45 @@
                             <constraint firstItem="ytf-R5-CdS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ajm-N6-v7t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nmh-aC-hMX"/>
+                    <navigationItem key="navigationItem" title="Users" id="nmh-aC-hMX"/>
                     <connections>
                         <outlet property="usersTableView" destination="ytf-R5-CdS" id="ErV-05-phv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971.01449275362324" y="105.80357142857143"/>
+            <point key="canvasLocation" x="443" y="106"/>
+        </scene>
+        <!--Posts Table View Controller-->
+        <scene sceneID="afA-1v-4cJ">
+            <objects>
+                <tableViewController storyboardIdentifier="PostsTableViewController" id="RwZ-pf-qwW" customClass="PostsTableViewController" customModule="SocialNetworking_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="wEP-PY-TSv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AIO-cb-9kA">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AIO-cb-9kA" id="uJo-Rk-B4g">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RwZ-pf-qwW" id="PWv-TC-ubZ"/>
+                            <outlet property="delegate" destination="RwZ-pf-qwW" id="SS6-Sg-a2k"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="postsTableView" destination="wEP-PY-TSv" id="ban-tb-PqI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFV-4a-ahQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1171" y="106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8vA-qR-8kg">
@@ -57,7 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvN-qb-9kC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-307" y="106"/>
+            <point key="canvasLocation" x="-286" y="119"/>
         </scene>
     </scenes>
     <resources>
