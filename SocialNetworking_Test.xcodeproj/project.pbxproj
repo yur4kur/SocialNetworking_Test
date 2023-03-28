@@ -21,6 +21,9 @@
 		6A54A46729CC859300AC0AB8 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A46529CC859300AC0AB8 /* PostTableViewCell.swift */; };
 		6A54A46829CC859300AC0AB8 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A54A46629CC859300AC0AB8 /* PostTableViewCell.xib */; };
 		6A54A46A29D16EE100AC0AB8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A46929D16EE100AC0AB8 /* Post.swift */; };
+		6A54A46E29D1E2A900AC0AB8 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A46D29D1E2A900AC0AB8 /* CommentsTableViewController.swift */; };
+		6A54A47229D1E31B00AC0AB8 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A47029D1E31B00AC0AB8 /* CommentsTableViewCell.swift */; };
+		6A54A47329D1E31B00AC0AB8 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A54A47129D1E31B00AC0AB8 /* CommentsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		6A54A46529CC859300AC0AB8 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		6A54A46629CC859300AC0AB8 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		6A54A46929D16EE100AC0AB8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6A54A46D29D1E2A900AC0AB8 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		6A54A47029D1E31B00AC0AB8 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		6A54A47129D1E31B00AC0AB8 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		6A54A45429C996AF00AC0AB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6A54A46F29D1E2F600AC0AB8 /* CommentsCell */,
 				6A54A46429CC857200AC0AB8 /* PostCell */,
 				6A54A46329CC834400AC0AB8 /* UserCell */,
 				6A54A43C29BD86CB00AC0AB8 /* LaunchScreen.storyboard */,
@@ -117,6 +124,7 @@
 			children = (
 				6A54A43529BD86C600AC0AB8 /* ViewController.swift */,
 				6A54A46129CC819300AC0AB8 /* PostsTableViewController.swift */,
+				6A54A46D29D1E2A900AC0AB8 /* CommentsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +153,15 @@
 				6A54A46629CC859300AC0AB8 /* PostTableViewCell.xib */,
 			);
 			path = PostCell;
+			sourceTree = "<group>";
+		};
+		6A54A46F29D1E2F600AC0AB8 /* CommentsCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A54A47029D1E31B00AC0AB8 /* CommentsTableViewCell.swift */,
+				6A54A47129D1E31B00AC0AB8 /* CommentsTableViewCell.xib */,
+			);
+			path = CommentsCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +227,7 @@
 				6A54A43E29BD86CB00AC0AB8 /* LaunchScreen.storyboard in Resources */,
 				6A54A43B29BD86CB00AC0AB8 /* Assets.xcassets in Resources */,
 				6A54A43929BD86C600AC0AB8 /* Main.storyboard in Resources */,
+				6A54A47329D1E31B00AC0AB8 /* CommentsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,10 +243,12 @@
 				6A54A43229BD86C600AC0AB8 /* AppDelegate.swift in Sources */,
 				6A54A46729CC859300AC0AB8 /* PostTableViewCell.swift in Sources */,
 				6A54A45A29C9999100AC0AB8 /* User.swift in Sources */,
+				6A54A46E29D1E2A900AC0AB8 /* CommentsTableViewController.swift in Sources */,
 				6A54A45D29C9DBBD00AC0AB8 /* UserTableViewCell.swift in Sources */,
 				6A54A46A29D16EE100AC0AB8 /* Post.swift in Sources */,
 				6A54A43429BD86C600AC0AB8 /* SceneDelegate.swift in Sources */,
 				6A54A46229CC819300AC0AB8 /* PostsTableViewController.swift in Sources */,
+				6A54A47229D1E31B00AC0AB8 /* CommentsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,78 +1,53 @@
 //
-//  PostsTableViewController.swift
+//  CommentsTableViewController.swift
 //  SocialNetworking_Test
 //
-//  Created by Юрий Куринной on 23.03.2023.
+//  Created by Юрий Куринной on 27.03.2023.
 //
 
 import UIKit
 
-class PostsTableViewController: UITableViewController {
-    
-    @IBOutlet var postsTableView: UITableView!
-    
-    var posts: [Post] = [] {
-        didSet {
-            postsTableView.reloadData()
-        }
-    }
-    
-    var networkManager = NetworkManager()
+class CommentsTableViewController: UITableViewController {
+
+    @IBOutlet var commentsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentsTableView.delegate = self
+        commentsTableView.dataSource = self
+        
+        let nib = UINib(nibName: "CommentsTableViewCell", bundle: nil)
+        commentsTableView.register(nib, forCellReuseIdentifier: "CommentsCellID")
 
-        postsTableView.delegate = self
-        postsTableView.dataSource = self
-        
-        
-        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
-        postsTableView.register(nib, forCellReuseIdentifier: "PostCellID")
-        
-        networkManager.getPostsByUser(userId: 1) { posts in
-            DispatchQueue.main.async {
-                self.posts = posts
-            }
-        }
-//        postsTableView.estimatedRowHeight = UITableView.automaticDimension
-//        postsTableView.rowHeight = UITableView.automaticDimension
-        
         // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = true
+        // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 10
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-        return 280
+        // #warning Incomplete implementation, return the number of rows
+        return 10
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellID", for: indexPath) as! PostTableViewCell
-        
-        cell.configurePostCell(posts[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
+
+        // Configure the cell...
 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CommentsTableViewController") as? CommentsTableViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,7 +57,7 @@ class PostsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -92,7 +67,7 @@ class PostsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.
