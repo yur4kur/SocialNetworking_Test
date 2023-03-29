@@ -17,7 +17,7 @@ class PostsTableViewController: UITableViewController {
         }
     }
     
-    var networkManager = NetworkManager()
+    let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

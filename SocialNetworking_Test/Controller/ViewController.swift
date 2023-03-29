@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         }
     }
      
-    var networkManager = NetworkManager()
+    let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

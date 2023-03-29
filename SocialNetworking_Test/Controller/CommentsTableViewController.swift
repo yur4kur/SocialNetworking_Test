@@ -11,6 +11,14 @@ class CommentsTableViewController: UITableViewController {
 
     @IBOutlet var commentsTableView: UITableView!
     
+    var comments: [Comment] = [] {
+        didSet {
+            commentsTableView.reloadData()
+        }
+    }
+    
+    let networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,13 +27,18 @@ class CommentsTableViewController: UITableViewController {
         
         let nib = UINib(nibName: "CommentsTableViewCell", bundle: nil)
         commentsTableView.register(nib, forCellReuseIdentifier: "CommentsCellID")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        networkManager.getCommentsByPost(postId: 2){ comments in
+            DispatchQueue.main.async {
+                self.comments = comments
+            }
+        }
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -34,16 +47,20 @@ class CommentsTableViewController: UITableViewController {
 //        return 0
 //    }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return comments.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
-
-        // Configure the cell...
+        
+        cell.configureCommentCell(comments[indexPath.row])
 
         return cell
     }

@@ -8,7 +8,13 @@
 import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
-
+   
+    @IBOutlet weak var commentLabel: UILabel!
+    
+    func configureCommentCell(_ comment: Comment) {
+        self.commentLabel.text = comment.body
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         //self.backgroundColor = .systemPink
