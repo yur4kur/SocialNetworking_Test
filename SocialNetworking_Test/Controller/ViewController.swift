@@ -57,6 +57,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PostsTableViewController") as? PostsTableViewController {
+            vc.userId = users[indexPath.row].id
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -11,6 +11,8 @@ class CommentsTableViewController: UITableViewController {
 
     @IBOutlet var commentsTableView: UITableView!
     
+    var postId = 0
+    
     var comments: [Comment] = [] {
         didSet {
             commentsTableView.reloadData()
@@ -28,7 +30,7 @@ class CommentsTableViewController: UITableViewController {
         let nib = UINib(nibName: "CommentsTableViewCell", bundle: nil)
         commentsTableView.register(nib, forCellReuseIdentifier: "CommentsCellID")
         
-        networkManager.getCommentsByPost(postId: 2){ comments in
+        networkManager.getCommentsByPost(postId: postId){ comments in
             DispatchQueue.main.async {
                 self.comments = comments
             }

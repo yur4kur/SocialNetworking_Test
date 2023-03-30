@@ -11,6 +11,8 @@ class PostsTableViewController: UITableViewController {
     
     @IBOutlet var postsTableView: UITableView!
     
+    var userId = 0
+    
     var posts: [Post] = [] {
         didSet {
             postsTableView.reloadData()
@@ -29,7 +31,7 @@ class PostsTableViewController: UITableViewController {
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         postsTableView.register(nib, forCellReuseIdentifier: "PostCellID")
         
-        networkManager.getPostsByUser(userId: 1) { posts in
+        networkManager.getPostsByUser(userId: userId) { posts in
             DispatchQueue.main.async {
                 self.posts = posts
             }
@@ -70,6 +72,7 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CommentsTableViewController") as? CommentsTableViewController {
+            vc.postId = posts[indexPath.row].id
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
