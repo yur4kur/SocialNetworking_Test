@@ -16,10 +16,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-UW-7CL">
-                        <rect key="frame" x="10" y="10" width="380" height="180"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-UW-7CL">
+                        <rect key="frame" x="10" y="10" width="48" height="180"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="360" id="zvT-Ub-xCt"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="zvT-Ub-xCt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
@@ -30,7 +30,7 @@
                     <constraint firstAttribute="bottom" secondItem="TQF-UW-7CL" secondAttribute="bottom" constant="10" id="6wo-1O-iWe"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="TQF-UW-7CL" secondAttribute="trailing" constant="10" id="Lcj-nh-3HB"/>
                     <constraint firstItem="TQF-UW-7CL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cDv-Ip-OSb"/>
-                    <constraint firstItem="TQF-UW-7CL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="k7f-dV-2BZ"/>
+                    <constraint firstItem="TQF-UW-7CL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="k7f-dV-2BZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

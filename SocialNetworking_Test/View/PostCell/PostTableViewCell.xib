@@ -12,21 +12,21 @@
         <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="SocialNetworking_Test" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="UITableViewCellContentView">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="UITableViewCellContentView">
                 <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="iDB-Zn-tkd">
-                        <rect key="frame" x="10" y="10" width="380" height="80"/>
+                        <rect key="frame" x="10" y="10" width="370" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="RAs-c7-udh">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="370" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-sq-B6C">
-                                <rect key="frame" x="0.0" y="56" width="380" height="24"/>
+                                <rect key="frame" x="0.0" y="56" width="370" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4e-8I-JPe"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="380" id="MNT-oA-v7s"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="MNT-oA-v7s"/>
                         </constraints>
                     </stackView>
                 </subviews>
