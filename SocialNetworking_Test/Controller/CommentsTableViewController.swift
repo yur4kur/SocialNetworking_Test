@@ -26,20 +26,13 @@ class CommentsTableViewController: UITableViewController {
         
         commentsTableView.delegate = self
         commentsTableView.dataSource = self
-//        commentsTableView.estimatedRowHeight = 200
-//        commentsTableView.rowHeight = UITableView.automaticDimension
         
         let nib = UINib(nibName: "CommentsTableViewCell", bundle: nil)
         commentsTableView.register(nib, forCellReuseIdentifier: "CommentsCellID")
-        commentsTableView.autoresizingMask = [.flexibleHeight]
-        
-        
-
-        
+    
         networkManager.getCommentsByPost(postId: postId){ comments in
             DispatchQueue.main.async {
                 self.comments = comments
-                
             }
         }
 
@@ -59,18 +52,10 @@ class CommentsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
-
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CommentsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
         
-//        if cell == nil {
-//            cell = (Bundle.main.loadNibNamed("CommentsTableViewCell", owner: self)?.first as? CommentsTableViewCell)!
-//        }
-//
         cell.configureCommentCell(comments[indexPath.row])
 
         return cell

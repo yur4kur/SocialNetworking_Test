@@ -37,9 +37,6 @@ class PostsTableViewController: UITableViewController {
                 self.posts = posts
             }
         }
-//        postsTableView.estimatedRowHeight = UITableView.automaticDimension
-//        postsTableView.rowHeight = UITableView.automaticDimension
-        
         
         self.clearsSelectionOnViewWillAppear = true
         self.navigationItem.title = "Posts"
@@ -55,13 +52,7 @@ class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-////        return UITableView.automaticDimension
-//        return 280
-//    }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellID", for: indexPath) as! PostTableViewCell
         

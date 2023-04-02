@@ -16,7 +16,6 @@ class ViewController: UIViewController {
             
             let nib = UINib(nibName: "UserTableViewCell", bundle: nil)
             usersTableView.register(nib, forCellReuseIdentifier: "UserCellID")
-            
         }
     }
     
@@ -39,7 +38,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -47,10 +45,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCellID", for: indexPath) as! UserTableViewCell
