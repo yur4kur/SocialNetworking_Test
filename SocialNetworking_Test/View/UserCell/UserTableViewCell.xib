@@ -10,29 +10,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="SocialNetworking_Test" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="325" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="UserTableViewCell" customModule="SocialNetworking_Test" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="325" height="100"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="UITableViewCellContentView">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kc5-Jk-Okp">
-                        <rect key="frame" x="27" y="2.5" width="153.5" height="89.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kc5-Jk-Okp">
+                        <rect key="frame" x="10" y="10" width="380" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jd-Jj-dcU">
-                                <rect key="frame" x="0.0" y="0.0" width="125" height="31.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="125" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ay-9m-nQY">
-                                <rect key="frame" x="0.0" y="36.5" width="153.5" height="26.5"/>
+                                <rect key="frame" x="0.0" y="27" width="153.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fX-Ru-pfg">
-                                <rect key="frame" x="0.0" y="68" width="51" height="21.5"/>
+                                <rect key="frame" x="0.0" y="58.5" width="51" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,7 +42,11 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Kc5-Jk-Okp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5rP-OK-3Lf"/>
                     <constraint firstItem="6ay-9m-nQY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KLz-T5-uZI"/>
+                    <constraint firstAttribute="trailing" secondItem="Kc5-Jk-Okp" secondAttribute="trailing" constant="10" id="fVO-NA-Kti"/>
+                    <constraint firstAttribute="bottom" secondItem="Kc5-Jk-Okp" secondAttribute="bottom" constant="10" id="fnO-7S-qIG"/>
+                    <constraint firstItem="Kc5-Jk-Okp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="w9V-n5-CBu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

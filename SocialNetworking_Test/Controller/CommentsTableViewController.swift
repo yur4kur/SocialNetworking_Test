@@ -65,7 +65,7 @@ class CommentsTableViewController: UITableViewController {
 //    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: CommentsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
+        let cell: CommentsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
         
 //        if cell == nil {
 //            cell = (Bundle.main.loadNibNamed("CommentsTableViewCell", owner: self)?.first as? CommentsTableViewCell)!
