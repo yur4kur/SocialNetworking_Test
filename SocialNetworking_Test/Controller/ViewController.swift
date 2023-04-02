@@ -31,12 +31,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Users"
+        
         networkManager.getAllUser { users in
             DispatchQueue.main.async {
                 self.users = users
             }
         }
     }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

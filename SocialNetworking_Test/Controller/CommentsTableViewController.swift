@@ -26,17 +26,25 @@ class CommentsTableViewController: UITableViewController {
         
         commentsTableView.delegate = self
         commentsTableView.dataSource = self
+//        commentsTableView.estimatedRowHeight = 200
+//        commentsTableView.rowHeight = UITableView.automaticDimension
         
         let nib = UINib(nibName: "CommentsTableViewCell", bundle: nil)
         commentsTableView.register(nib, forCellReuseIdentifier: "CommentsCellID")
+        commentsTableView.autoresizingMask = [.flexibleHeight]
+        
+        
+
         
         networkManager.getCommentsByPost(postId: postId){ comments in
             DispatchQueue.main.async {
                 self.comments = comments
+                
             }
         }
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        self.navigationItem.title = "Comments"
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
@@ -44,24 +52,25 @@ class CommentsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return comments.count
     }
 
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
+        var cell: CommentsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CommentsCellID", for: indexPath) as! CommentsTableViewCell
         
+//        if cell == nil {
+//            cell = (Bundle.main.loadNibNamed("CommentsTableViewCell", owner: self)?.first as? CommentsTableViewCell)!
+//        }
+//
         cell.configureCommentCell(comments[indexPath.row])
 
         return cell
