@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         self.navigationItem.title = "Users"
         
-        networkManager.getAllUser { users in
+        networkManager.getAllUsers { users in
             DispatchQueue.main.async {
                 self.users = users
             }

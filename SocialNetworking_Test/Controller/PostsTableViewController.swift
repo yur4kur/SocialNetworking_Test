@@ -13,6 +13,9 @@ class PostsTableViewController: UITableViewController {
     
     var userId = 0
     
+    var newPostTitle = "Si vic pacem para belum"
+    var newPostBody = "Veni vidi vici"
+    
     var posts: [Post] = [] {
         didSet {
             postsTableView.reloadData()
@@ -30,7 +33,7 @@ class PostsTableViewController: UITableViewController {
         
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         postsTableView.register(nib, forCellReuseIdentifier: "PostCellID")
-        postsTableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+
         
         networkManager.getPostsByUser(userId: userId) { posts in
             DispatchQueue.main.async {
@@ -40,9 +43,22 @@ class PostsTableViewController: UITableViewController {
         
         self.clearsSelectionOnViewWillAppear = true
         self.navigationItem.title = "Posts"
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    @IBAction func didTapAddPost(_ sender: Any) {
+        
+        var post = Post(userId: userId, id: 0, title: newPostTitle, body: newPostBody)
+        
+        networkManager.createPost(post) { serverPost in
+            post.id = serverPost.id
+            DispatchQueue.main.async {
+                self.posts.append(post)
+            }
+        }
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,24 +83,16 @@ class PostsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     
-    // Override to support editing the table view.
+    // Delete cell method.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+       }
+//             else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }    
     }
     
 

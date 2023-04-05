@@ -11,13 +11,19 @@ class NetworkManager {
     
     private let baseURL = "https://jsonplaceholder.typicode.com/"
     
+    enum HTTPMethod: String {
+        case post
+        case delete
+    }
+    
     enum APIs: String {
         case users
         case posts
         case comments
     }
     
-    func getAllUser(_ completionHandler: @escaping ([User]) -> Void) {
+    // MARK: - GET methods
+    func getAllUsers(_ completionHandler: @escaping ([User]) -> Void) {
         
         guard let url = URL(string: baseURL + APIs.users.rawValue) else { return }
             
@@ -91,6 +97,34 @@ class NetworkManager {
                     completionHandler(comments)
                 } catch {
                     print("Error in decoding data: \(error.localizedDescription)")
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    // MARK: POST methods
+    func createPost(_ post: Post, _ completionHandler: @escaping (Post) -> Void){
+        
+        guard let url = URL(string: baseURL + APIs.posts.rawValue),
+        let sentPost = try? JSONEncoder().encode(post) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpBody = sentPost
+        request.setValue("\(sentPost.count)", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error in request: \(error.localizedDescription)")
+            }
+            
+            if let response = response as? HTTPURLResponse, response.statusCode == 201 {
+                if let data = data {
+                    if let returnedPost = try? JSONDecoder().decode(Post.self, from: data) {
+                        completionHandler(returnedPost)
+                    }
                 }
             }
         }
