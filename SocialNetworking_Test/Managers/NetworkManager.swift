@@ -11,6 +11,11 @@ class NetworkManager {
     
     private let baseURL = "https://jsonplaceholder.typicode.com/"
     
+    enum HTTPHeaders: String {
+        case length = "Content-Length"
+        case type = "Content-Type"
+    }
+    
     enum HTTPMethod: String {
         case post
         case delete
@@ -131,4 +136,58 @@ class NetworkManager {
         task.resume()
     }
     
+    func createComment(_ comment: Comment, _ completionHandler: @escaping (Comment) -> Void) {
+        
+        guard let url = URL(string: baseURL + APIs.comments.rawValue),
+        let sentComment = try? JSONEncoder().encode(comment) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpBody = sentComment
+        request.setValue("\(sentComment.count)", forHTTPHeaderField: HTTPHeaders.length.rawValue)
+        request.setValue("application/json", forHTTPHeaderField: HTTPHeaders.type.rawValue)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error in request: \(error.localizedDescription)")
+            }
+            
+            if let response = response as? HTTPURLResponse, response.statusCode == 201 {
+                if let data = data {
+                    if let returnedComment = try? JSONDecoder().decode(Comment.self, from: data) {
+                        completionHandler(returnedComment)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    // MARK: DELETE methods
+    func deletePost(_ post: Post, _ completionHandler: @escaping(Post) -> Void) {
+        guard let url = URL(string: baseURL + APIs.posts.rawValue),
+              let deletedPost = try? JSONEncoder().encode(post) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.httpBody = deletedPost
+        request.setValue("\(deletedPost.count)", forHTTPHeaderField: HTTPHeaders.length.rawValue)
+        request.setValue("application/json", forHTTPHeaderField: HTTPHeaders.type.rawValue)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error in request: \(error.localizedDescription)")
+            }
+            
+            if let response = response as? HTTPURLResponse, response.statusCode == 204 || response.statusCode == 200  {
+                if let data = data {
+                    if let wipedPost = try? JSONDecoder().decode(Post.self, from: data) {
+                        completionHandler(wipedPost)
+                        print(response.statusCode)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
 }

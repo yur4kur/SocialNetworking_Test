@@ -18,6 +18,7 @@ class PostsTableViewController: UITableViewController {
     
     var posts: [Post] = [] {
         didSet {
+            print(posts.count)
             postsTableView.reloadData()
         }
     }
@@ -53,7 +54,9 @@ class PostsTableViewController: UITableViewController {
         networkManager.createPost(post) { serverPost in
             post.id = serverPost.id
             DispatchQueue.main.async {
-                self.posts.append(post)
+                self.posts.append(serverPost)
+                print(serverPost.id)
+                
             }
         }
         
@@ -88,7 +91,15 @@ class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.posts.remove(at: indexPath.row)
+//            networkManager.deletePost(posts[indexPath.row]) { deletedPost in
+//                DispatchQueue.main.async {
+//                    
+//                    print(self.posts.count)
+//                }
+//            }
+           
+            
        }
 //             else if editingStyle == .insert {
 //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

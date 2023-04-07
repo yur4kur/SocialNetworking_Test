@@ -67,7 +67,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFV-4a-ahQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073.913043478261" y="105.80357142857143"/>
+            <point key="canvasLocation" x="1149" y="106"/>
         </scene>
         <!--Comments Table View Controller-->
         <scene sceneID="3k5-fS-SxJ">
@@ -82,13 +82,20 @@
                             <outlet property="delegate" destination="1uJ-mY-RCV" id="fLS-pd-Mi2"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="7zc-n1-A2X">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="4MO-6K-quZ">
+                            <connections>
+                                <action selector="didTapAddComment:" destination="1uJ-mY-RCV" id="Hwg-tc-yen"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentsTableView" destination="ehY-2E-wjM" id="zRU-dC-HuP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVD-M4-taC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776.811594202899" y="118.52678571428571"/>
+            <point key="canvasLocation" x="3360.8695652173915" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8vA-qR-8kg">
@@ -109,22 +116,22 @@
             <point key="canvasLocation" x="-286" y="119"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Jnr-FD-KmO">
+        <scene sceneID="g4X-gD-Csv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xyx-fJ-sTP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f7O-B5-Q5z" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Va0-5A-f1s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nYd-QX-72o">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RwZ-pf-qwW" kind="relationship" relationship="rootViewController" id="WvF-zw-tll"/>
+                        <segue destination="1uJ-mY-RCV" kind="relationship" relationship="rootViewController" id="hL9-GB-x8e"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3PN-RF-pNW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5k-W5-42G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163.768115942029" y="105.80357142857143"/>
+            <point key="canvasLocation" x="2450.7246376811595" y="93.75"/>
         </scene>
     </scenes>
     <resources>
