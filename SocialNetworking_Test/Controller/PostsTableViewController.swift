@@ -90,15 +90,12 @@ class PostsTableViewController: UITableViewController {
     // Delete cell method.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            networkManager.deletePost(posts[indexPath.row]) { deletedPost in
+                DispatchQueue.main.async {
+                    print(deletedPost.id)
+                }
+            }
             self.posts.remove(at: indexPath.row)
-//            networkManager.deletePost(posts[indexPath.row]) { deletedPost in
-//                DispatchQueue.main.async {
-//                    
-//                    print(self.posts.count)
-//                }
-//            }
-           
             
        }
 //             else if editingStyle == .insert {

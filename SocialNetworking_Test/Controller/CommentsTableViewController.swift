@@ -89,10 +89,14 @@ class CommentsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            networkManager.deleteComment(comments[indexPath.row]) { wipedComment in
+                DispatchQueue.main.async {
+                    print(wipedComment.id)
+                    print(self.comments.count)
+                }
+            }
             self.comments.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+
         }
     }
    
