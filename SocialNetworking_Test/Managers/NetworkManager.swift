@@ -126,10 +126,12 @@ class NetworkManager {
             }
             
             if let response = response as? HTTPURLResponse, response.statusCode == 201 {
-                if let data = data {
-                    if let returnedPost = try? JSONDecoder().decode(Post.self, from: data) {
-                        completionHandler(returnedPost)
-                    }
+                guard let data = data else { return }
+                do{
+                    let returnedPost = try JSONDecoder().decode(Post.self, from: data)
+                    completionHandler(returnedPost)
+                } catch {
+                    print("Error while creating post")
                 }
             }
         }
@@ -153,10 +155,12 @@ class NetworkManager {
             }
             
             if let response = response as? HTTPURLResponse, response.statusCode == 201 {
-                if let data = data {
-                    if let returnedComment = try? JSONDecoder().decode(Comment.self, from: data) {
-                        completionHandler(returnedComment)
-                    }
+                guard let data = data else { return }
+                do {
+                    let returnedComment = try JSONDecoder().decode(Comment.self, from: data)
+                    completionHandler(returnedComment)
+                } catch {
+                    print("Error while creating comment")
                 }
             }
         }

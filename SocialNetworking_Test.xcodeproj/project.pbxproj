@@ -25,6 +25,10 @@
 		6A54A47229D1E31B00AC0AB8 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A47029D1E31B00AC0AB8 /* CommentsTableViewCell.swift */; };
 		6A54A47329D1E31B00AC0AB8 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A54A47129D1E31B00AC0AB8 /* CommentsTableViewCell.xib */; };
 		6A54A47529D2D07400AC0AB8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A47429D2D07400AC0AB8 /* Comment.swift */; };
+		6A54A49B29E9356300AC0AB8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A49A29E9356300AC0AB8 /* DataManager.swift */; };
+		6A54A49D29E9357500AC0AB8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A49C29E9357500AC0AB8 /* CoreDataManager.swift */; };
+		6A54A4A329E944BA00AC0AB8 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A4A129E944BA00AC0AB8 /* DataBase.xcdatamodeld */; };
+		6A54A4A629E959B600AC0AB8 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A4A529E959B600AC0AB8 /* UserEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		6A54A47029D1E31B00AC0AB8 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		6A54A47129D1E31B00AC0AB8 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 		6A54A47429D2D07400AC0AB8 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		6A54A49A29E9356300AC0AB8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6A54A49C29E9357500AC0AB8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6A54A4A229E944BA00AC0AB8 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		6A54A4A529E959B600AC0AB8 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +111,11 @@
 		6A54A45329C996A700AC0AB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6A54A4A429E9597A00AC0AB8 /* DataBaseModels */,
 				6A54A45929C9999100AC0AB8 /* User.swift */,
 				6A54A46929D16EE100AC0AB8 /* Post.swift */,
 				6A54A47429D2D07400AC0AB8 /* Comment.swift */,
+				6A54A4A129E944BA00AC0AB8 /* DataBase.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				6A54A45729C9982700AC0AB8 /* NetworkManager.swift */,
+				6A54A49A29E9356300AC0AB8 /* DataManager.swift */,
+				6A54A49C29E9357500AC0AB8 /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -165,6 +177,14 @@
 				6A54A47129D1E31B00AC0AB8 /* CommentsTableViewCell.xib */,
 			);
 			path = CommentsCell;
+			sourceTree = "<group>";
+		};
+		6A54A4A429E9597A00AC0AB8 /* DataBaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				6A54A4A529E959B600AC0AB8 /* UserEntity.swift */,
+			);
+			path = DataBaseModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,15 +263,19 @@
 			files = (
 				6A54A45829C9982700AC0AB8 /* NetworkManager.swift in Sources */,
 				6A54A43629BD86C600AC0AB8 /* ViewController.swift in Sources */,
+				6A54A4A329E944BA00AC0AB8 /* DataBase.xcdatamodeld in Sources */,
 				6A54A43229BD86C600AC0AB8 /* AppDelegate.swift in Sources */,
 				6A54A46729CC859300AC0AB8 /* PostTableViewCell.swift in Sources */,
 				6A54A45A29C9999100AC0AB8 /* User.swift in Sources */,
 				6A54A46E29D1E2A900AC0AB8 /* CommentsTableViewController.swift in Sources */,
+				6A54A4A629E959B600AC0AB8 /* UserEntity.swift in Sources */,
 				6A54A45D29C9DBBD00AC0AB8 /* UserTableViewCell.swift in Sources */,
 				6A54A46A29D16EE100AC0AB8 /* Post.swift in Sources */,
 				6A54A43429BD86C600AC0AB8 /* SceneDelegate.swift in Sources */,
 				6A54A46229CC819300AC0AB8 /* PostsTableViewController.swift in Sources */,
 				6A54A47229D1E31B00AC0AB8 /* CommentsTableViewCell.swift in Sources */,
+				6A54A49B29E9356300AC0AB8 /* DataManager.swift in Sources */,
+				6A54A49D29E9357500AC0AB8 /* CoreDataManager.swift in Sources */,
 				6A54A47529D2D07400AC0AB8 /* Comment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +494,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6A54A4A129E944BA00AC0AB8 /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6A54A4A229E944BA00AC0AB8 /* DataBase.xcdatamodel */,
+			);
+			currentVersion = 6A54A4A229E944BA00AC0AB8 /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6A54A42629BD86C600AC0AB8 /* Project object */;
 }
