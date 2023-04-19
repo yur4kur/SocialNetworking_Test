@@ -25,14 +25,15 @@ class ViewController: UIViewController {
         }
     }
      
-    let networkManager = NetworkManager()
+    //let networkManager = NetworkManager()
+    private let dataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "Users"
         
-        networkManager.getAllUsers { users in
+        dataManager.getAllUsers { users in
             DispatchQueue.main.async {
                 self.users = users
             }

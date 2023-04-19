@@ -15,9 +15,9 @@ class UserTableViewCell: UITableViewCell {
     
     func configureUserCell(_ user: User) {
         userNameLabel.text = user.name
-        companyNameLabel.text = user.company.name
+        companyNameLabel.text = user.username
         //companyNameLabel.text = "«" + user.company.name + "»"
-        catchPhraseLabel.text = user.company.catchPhrase
+        catchPhraseLabel.text = user.email
     }
     
 //    override func awakeFromNib() {

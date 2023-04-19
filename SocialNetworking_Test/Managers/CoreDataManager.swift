@@ -48,6 +48,30 @@ class CoreDataManager {
     
     private init() {}
     
+    func getAllUsers(_ completionHandler: @escaping ([User]) -> Void) {
+        let viewContext = persistentContainer.viewContext
+            viewContext.perform {
+                let userEntities = try? UserEntity.all(viewContext)
+                let users = userEntities?.map ({ User(entity: $0) })
+                //({ User(entity: $0) })
+//                { users in
+//                    User(entity: users[0])
+//                }
+                completionHandler(users ?? [])
+            }
+    }
+    
+    func save(users: [User], _ completionHandler: @escaping () -> ()) -> () {
+        let viewContext = persistentContainer.viewContext
+        viewContext.perform {
+            for user in users {
+               _ = try? UserEntity.findOrCreate(user, viewContext)
+            }
+            try? viewContext.save()
+            
+            completionHandler()
+        }
+    }
 //    // MARK: - Core Data Saving support
 //
 //    func saveContext () {
