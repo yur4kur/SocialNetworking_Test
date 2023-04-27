@@ -29,17 +29,12 @@ class NetworkManager {
     
     // MARK: - GET methods
     func getAllUsers(_ completionHandler: @escaping ([User]) -> Void) {
-        
         guard let url = URL(string: baseURL + APIs.users.rawValue) else { return }
-            
            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                
                 if let error = error {
                     print("Error in request: \(error.localizedDescription)")
                 }
-                
                 if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    
                     guard let data = data else { return }
                     do {
                         let users = try JSONDecoder().decode([User].self, from: data)
@@ -54,9 +49,7 @@ class NetworkManager {
     
     
     func getPostsByUser (userId: Int, _ completionHandler: @escaping ([Post]) -> Void) {
-        
         guard let url = URL(string: baseURL + APIs.posts.rawValue) else { return }
-        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         components?.queryItems = [URLQueryItem(name: "userId", value: "\(userId)")]
         
@@ -83,18 +76,14 @@ class NetworkManager {
     func getCommentsByPost(postId: Int, _ completionHandler: @escaping ([Comment]) -> Void) {
         
         guard let url = URL(string: baseURL + APIs.comments.rawValue) else { return }
-        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         components?.queryItems = [URLQueryItem(name: "postId", value: "\(postId)")]
-        
         guard let queryURL = components?.url else { return }
         
         let task = URLSession.shared.dataTask(with: queryURL) { data, response, error in
-            
             if let error = error {
                 print("Error in request: \(error.localizedDescription)")
             }
-            
             if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 guard let data = data else { return }
                 do {
@@ -170,7 +159,7 @@ class NetworkManager {
     // MARK: -  DELETE methods
     func deletePost(_ post: Post, _ completionHandler: @escaping(Post) -> Void) {
         
-            guard let url = URL(string: baseURL + APIs.posts.rawValue),
+        guard let url = URL(string: baseURL + APIs.posts.rawValue),
               let deletedPost = try? JSONEncoder().encode(post) else { return }
         
         var request = URLRequest(url: url)

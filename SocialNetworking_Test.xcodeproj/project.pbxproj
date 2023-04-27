@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A236C2029FA91EF0015E615 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A236C1F29FA91EF0015E615 /* CommentEntity.swift */; };
 		6A54A43229BD86C600AC0AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A43129BD86C600AC0AB8 /* AppDelegate.swift */; };
 		6A54A43429BD86C600AC0AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A43329BD86C600AC0AB8 /* SceneDelegate.swift */; };
 		6A54A43629BD86C600AC0AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A54A43529BD86C600AC0AB8 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A236C1F29FA91EF0015E615 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
 		6A54A42E29BD86C600AC0AB8 /* SocialNetworking_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetworking_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A54A43129BD86C600AC0AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A54A43329BD86C600AC0AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				6A54A4A529E959B600AC0AB8 /* UserEntity.swift */,
 				6A54A4D429EFC20C00AC0AB8 /* PostEntity.swift */,
+				6A236C1F29FA91EF0015E615 /* CommentEntity.swift */,
 			);
 			path = DataBaseModels;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A236C2029FA91EF0015E615 /* CommentEntity.swift in Sources */,
 				6A54A45829C9982700AC0AB8 /* NetworkManager.swift in Sources */,
 				6A54A43629BD86C600AC0AB8 /* ViewController.swift in Sources */,
 				6A54A4A329E944BA00AC0AB8 /* DataBase.xcdatamodeld in Sources */,
@@ -435,6 +439,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +468,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
